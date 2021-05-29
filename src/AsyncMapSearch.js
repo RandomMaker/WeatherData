@@ -16,13 +16,13 @@ export const AsyncMapSearch = (props) => {
     const handleChange = (e) => setTextValue(e.target.value)
 
     const handleOptionsClose = (e) => {
-        const selected = e.target.textContent || e.target.value
+        const selected = e.getOptionLabel || e.target.textContent || e.target.value
         console.log(nameNlocation)
         if (nameNlocation.current.map(nam => nam[0]).includes(selected)) {
             // alert('You hit me. ')
             const index = nameNlocation.current.map(nam => nam[0]).indexOf(selected)
             console.log(nameNlocation.current[index])
-            props.onChange(nameNlocation.current[index][1])
+            props.onChange(nameNlocation.current[index])
         }
         setOpen(false)
     }

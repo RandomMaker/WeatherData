@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import './map.css'
 
-function Map({loct}) {
+function Map({loct, name}) {
 
     const [location, setLocation] = useState([50, 50])
 
@@ -17,7 +17,7 @@ function Map({loct}) {
             <MapContainer
                 center={location}
                 id={"mapContainer"}
-                zoom={13}
+                zoom={10}
                 scrollWheelZoom={true}
             >
                 <TileLayer
@@ -26,7 +26,7 @@ function Map({loct}) {
                 />
                 <Marker position={location}>
                     <Popup>
-                        This is a popup
+                        {name}
                     </Popup>
                 </Marker>
                 <SetViewOnClick location={location}/>
