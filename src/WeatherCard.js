@@ -51,23 +51,22 @@ export function SimpleCard() {
 }
 
 
-export default function WeatherCard() {
+export default function WeatherCard({weather_data}) {
     const classes = useStyles()
     return (
         <Card className={classes.root}>
             <CardContent>
-                <h2>This is a card</h2>
-                {/*  temperature  */}
-                {/*  sunrise */}
-                {/*  sunset */}
-                {/*  feels_like  */}
-                {/*  pressure  */}
-                {/*    humidity % */}
-                {/*    clouds %*/}
-                {/*    uvi */}
-                {/*    visibility*/}
-                {/*    wind_speed*/}
-                {/*    wind_deg*/}
+                <h2>Todays temp: {weather_data.temperature}</h2>
+                <h2>Sunrise at: {weather_data.sunrise}</h2>
+                <h2>Sunset at: {weather_data.sunset}</h2>
+                <h2>Feels Like: {weather_data.feels_like}</h2>
+                <h2>Pressure: {weather_data.pressure}</h2>
+                <h2>Humidity: {weather_data.humidity}</h2>
+                <h2>Clouds: {weather_data.clouds}</h2>
+                <h2>Uv Index: {weather_data.uvIndex}</h2>
+                <h2>Visibility: {weather_data.visibility}</h2>
+                <h2>Wind speed: {weather_data.wind_speed}</h2>
+                <h2>Wind deg: {weather_data.wind_deg}</h2>
             </CardContent>
         </Card>
     )
